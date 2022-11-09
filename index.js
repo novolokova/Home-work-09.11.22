@@ -40,18 +40,19 @@
 // (якщо значення рівні - повертаємо null), інакше(фкщо різного типу) теж повертає null.
 // Значення для перевірки функції вводить користувач.
 
-let userInput1 = prompt("Enter first value: ");
-let userInput2 = prompt("Enter second value: ");
+let userInput1;
+let userInput2;
 
 if (checkUserInput(userInput1) && checkUserInput(userInput2)) {
-  const check = checkBiggerNumber(userInput1, userInput2);
+  const check = checkTypeOf(userInput1, userInput2);
   console.log(check);
 } else {
   console.log(null);
 }
+
 /**
- * 
- * @param {string} value 
+ *
+ * @param {string} value
  * @returns {boolean}
  */
 function checkUserInput(value) {
@@ -61,22 +62,23 @@ function checkUserInput(value) {
   return true;
 }
 /**
- * 
- * @param {string} value1 
- * @param {string} value2 
- * @returns {null}
+ *
+ * @param {string} value1
+ * @param {string} value2
+ * @returns {null, number}
  */
 function checkTypeOf(value1, value2) {
-  if (typeof (value1) === typeof (value2)) {
-    checkBiggerNumber(value1, value2);
+  if (typeof(value1) === typeof(value2)) {
+    const result = checkBiggerNumber(value1, value2);
+    return result;
   }
   return null;
 }
 /**
- * 
- * @param {number} value1 
- * @param {number} value2 
- * @returns {}
+ *
+ * @param {string} value1
+ * @param {string} value2
+ * @returns {number, null}
  */
 function checkBiggerNumber(value1, value2) {
   if (Number(value1) > Number(value2)) {

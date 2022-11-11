@@ -21,9 +21,9 @@ const checkUserInputNumber = function(userInput){
 
 /**
  * 
- * @param {string | number | boolean} userInput1 
- * @param {string | number | boolean} userInput2 
- * @returns {null | getMaxCompare}
+ * @param {any} userInput1 
+ * @param {any} userInput2 
+ * @returns {null | any}
  */
 const checkUserInput = function (userInput1, userInput2) {
   if (typeof(userInput1) === typeof(userInput2)) {
@@ -34,9 +34,9 @@ const checkUserInput = function (userInput1, userInput2) {
 
 /**
  * 
- * @param {string | number | boolean} userInput1 
- * @param {string | number | boolean} userInput2 
- * @returns {string | number | boolean | null}
+ * @param {any} userInput1 
+ * @param {any} userInput2 
+ * @returns {any}
  */
 function getMaxCompare(userInput1, userInput2) {
   if (userInput1 > userInput2) {
@@ -47,6 +47,6 @@ function getMaxCompare(userInput1, userInput2) {
   }
   return null;
 }
-
-
+console.log(checkUserInput('wer', 'ert'));
+console.dir(checkUserInput);
 
